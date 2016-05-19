@@ -1,0 +1,59 @@
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse; }
+
+.bubbles .item-wrap {
+  display: table;
+  border-radius: 2000px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  /* &:hover {
+             @extend .pulse;
+             -webkit-animation-iteration-count: infinite;
+             animation-iteration-count: infinite;
+         } */ }
+
+.bubbles .active {
+  display: table; }
+
+.bubbles .item-content {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center; }
+
+.bubbles .color-1 {
+  background: rgba(255, 100, 100, 0.9); }
+
+.bubbles .color-2 {
+  background: rgba(100, 255, 100, 0.9); }
+
+.bubbles .color-3 {
+  background: rgba(100, 100, 255, 0.9); }
+
+.bubbles .color-4 {
+  background: rgba(100, 255, 255, 0.9); }
