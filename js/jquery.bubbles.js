@@ -3,14 +3,14 @@ jQuery.noConflict();
     $.fn.bubbles = function(options) {
         var defaults = {
             data: [
-                { id: 1, pid: 0, title: "title1", subtitle: "subtitle1", content: "content1", subpostion: [], active: true },
-                { id: 2, pid: 1, title: "title2", subtitle: "subtitle1", content: "", subpostion: [], active: false },
-                { id: 3, pid: 1, title: "title3", subtitle: "subtitle1", content: "", subpostion: [], active: false },
-                { id: 4, pid: 2, title: "title4", subtitle: "subtitle1", content: "", subpostion: [], active: false,callbackclick:showInfo}
+                { id: 1, pid: 0, title: "title1", subtitle: "subtitle1", content: "content1", active: true },
+                { id: 2, pid: 1, title: "title2", subtitle: "subtitle1", content: "", active: false },
+                { id: 3, pid: 1, title: "title3", subtitle: "subtitle1", content: "", active: false },
+                { id: 4, pid: 2, title: "title4", subtitle: "subtitle1", content: "", active: false, callbackclick: showInfo, callbackclickvar: 'haha' }
             ],
             basesize: 150,
             foreground: '#000',
-            backgrounds: ['color-1', 'color-2', 'color-3', 'color-4']
+            backgrounds: ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7']
         };
         var opts = $.extend(defaults, options);
 
@@ -20,10 +20,12 @@ jQuery.noConflict();
         var html = $(theme);
         const itemPerfix = "b_i_";
 
+        from(opts.data)
+            .each(function(value) {
+                value.subpostion = [];
 
-        /*for (var i = 0; i < opts.data.length; i++) {
-            create(opts.data[i], this);
-        }*/
+
+            });
 
         from(opts.data)
             .where(function(value) {
@@ -53,23 +55,28 @@ jQuery.noConflict();
             //remove all active
             $(".item-wrap").each(function(index, el) {
                 $(el).removeClass('active');
+                //$(el).removeClass('ontop');
             });
 
             //set this node to active
             $(this).addClass('active');
             //set parent node to active
-            from(opts.data)
-                .where(function(value) {
+            setParentActive(Obj);
+            function setParentActive(_obj) {
+                from(opts.data)
+                    .where(function(value) {
 
-                    return value.id == Obj.pid;
-                })
-                .each(function(value) {
-                    $("#" + itemPerfix + value.id).each(function(index, el) {
-                        $(el).addClass('active');
+                        return value.id == _obj.pid;
+                    })
+                    .each(function(value) {
+                        $("#" + itemPerfix + value.id).each(function(index, el) {
+                            $(el).addClass('active');
+                        });
+
+                        setParentActive(value);
                     });
+            }
 
-
-                });
             //set all son node to active
             from(opts.data)
                 .where(function(value) {
@@ -83,14 +90,15 @@ jQuery.noConflict();
 
                 });
 
-
-                //callback click
-                if(Obj.callbackclick)
-                {
-                	Obj.callbackclick('test');
-                }
+            //$(this).addClass('ontop');
+            //callback click
+            if (Obj.callbackclick) {
+                Obj.callbackclick(Obj.callbackclickparam);
+            }
 
         });
+
+
 
         //递归创建泡泡
         function add(obj, parent) {
@@ -104,7 +112,7 @@ jQuery.noConflict();
                 });
         }
 
-      
+
 
         function create(obj, parent) {
 
@@ -210,7 +218,7 @@ jQuery.noConflict();
         }
 
 
-       
+
 
 
 
@@ -221,6 +229,6 @@ jQuery.noConflict();
 
 
 
- function showInfo(data){
-        	alert(data);
-        }
+function showInfo(data) {
+    alert(data);
+}
