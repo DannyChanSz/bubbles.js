@@ -24,36 +24,106 @@
   -webkit-animation-name: pulse;
   animation-name: pulse; }
 
-.bubbles .item-wrap {
-  display: table;
-  border-radius: 2000px;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  display: none;
-  cursor: pointer;
-  /* &:hover {
+.bubbles {
+  /* .color-1 {
+         background: rgba(64, 197, 169, 0.9);
+         border-color:darken(rgba(64, 197, 169, 0.6),20%);
+         &:hover{
+         	border-color:lighten(rgba(64, 197, 169, 0.9),20%);
+         }
+     }
+     .color-2 {
+         background: rgba(47, 244, 113, 0.9);
+         border-color:darken(rgba(47, 244, 113, 0.6),20%);
+         &:hover{
+         	border-color:lighten(rgba(47, 244, 113, 0.9),20%);
+         }
+     }
+     .color-3 {
+         background: rgba(53, 152, 220, 0.9);
+         border-color:darken(rgba(53, 152, 220, 0.6),20%);
+         &:hover{
+         	border-color:lighten(rgba(53, 152, 220, 0.9),20%);
+         }
+     }
+     .color-4 {
+         background: rgba(156, 89, 184, 0.9);
+         border-color:darken(rgba(156, 89, 184, 0.9),20%);
+         &:hover{
+         	border-color:lighten(rgba(156, 89, 184, 0.9),20%);
+         }
+     }
+     .color-5 {
+         background: rgba(241, 196, 15, 0.9);
+         border-color:darken(rgba(241, 196, 15, 0.9),20%);
+         &:hover{
+         	border-color:lighten(rgba(241, 196, 15, 0.9),20%);
+         }
+     }
+     .color-6 {
+         background: rgba(231, 126, 35, 0.9);
+         border-color:darken(rgba(231, 126, 35, 0.9),20%);
+         &:hover{
+         	border-color:lighten(rgba(231, 126, 35, 0.9),20%);
+         }
+     }
+     .color-7 {
+         background: rgba(232, 76, 61, 0.9);
+         border-color:darken(rgba(232, 76, 61, 0.9),20%);
+         &:hover{
+         	border-color:lighten(rgba(232, 76, 61, 0.9),20%);
+         }
+     } */ }
+  .bubbles .item-wrap {
+    display: table;
+    border-radius: 2000px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    /* &:hover {
              @extend .pulse;
              -webkit-animation-iteration-count: infinite;
              animation-iteration-count: infinite;
          } */ }
-
-.bubbles .active {
-  display: table; }
-
-.bubbles .item-content {
-  vertical-align: middle;
-  display: table-cell;
-  text-align: center; }
-
-.bubbles .color-1 {
-  background: rgba(255, 100, 100, 0.9); }
-
-.bubbles .color-2 {
-  background: rgba(100, 255, 100, 0.9); }
-
-.bubbles .color-3 {
-  background: rgba(100, 100, 255, 0.9); }
-
-.bubbles .color-4 {
-  background: rgba(100, 255, 255, 0.9); }
+    .bubbles .item-wrap h1, .bubbles .item-wrap h2, .bubbles .item-wrap h3, .bubbles .item-wrap h4 {
+      margin: 0;
+      padding: 0; }
+  .bubbles .active {
+    display: table; }
+  .bubbles .ontop {
+    z-index: 9999; }
+  .bubbles .item-content {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    color: #fff; }
+  .bubbles .color-1 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-1:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-2 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-2:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-3 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-3:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-4 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-4:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-5 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-5:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-6 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-6:hover {
+      background: rgba(37, 103, 182, 0.9); }
+  .bubbles .color-7 {
+    background: rgba(20, 55, 97, 0.9); }
+    .bubbles .color-7:hover {
+      background: rgba(37, 103, 182, 0.9); }
